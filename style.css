@@ -1,0 +1,124 @@
+@import url('https://googleapis.com');
+
+:root {
+    --marrom-escuro: #3d2b1f;
+    --marrom-quente: #6d4c41;
+    --creme-fundo: #fdf8f5;
+    --dourado: #c08d5d;
+    --verde-whats: #25d366;
+    --sombra: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+* { scroll-behavior: smooth; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--creme-fundo);
+    color: #2c1b18;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                url('img/banner.jpeg') center/cover no-repeat;
+    height: 90vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; color: white; padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 8vw, 4rem);
+    margin: 10px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.tagline {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}
+
+.divider {
+    width: 150px; height: 3px; background: var(--dourado);
+    margin: 15px auto 25px; border-radius: 10px;
+}
+
+.subtitulo { 
+    font-size: clamp(1rem, 2.5vw, 1.25rem); 
+    max-width: 800px; /* Largura aumentada para não quebrar a palavra */
+    margin: 0 auto 35px; 
+    font-weight: 300;
+    text-wrap: balance;
+}
+
+/* --- BOTÕES --- */
+.btn-navegacao, .btn-whats {
+    text-decoration: none; padding: 16px 32px; border-radius: 50px;
+    font-weight: 700; margin: 10px; display: inline-block;
+    transition: 0.4s; text-transform: uppercase; font-size: 0.8rem;
+}
+
+.btn-navegacao { border: 2px solid white; color: white; }
+.btn-navegacao:hover { background: white; color: var(--marrom-escuro); }
+
+.btn-whats { background: var(--verde-whats); color: white; }
+
+/* --- PREÇOS --- */
+.container-precos { padding: 80px 20px; max-width: 800px; margin: 0 auto; }
+.precos-destaque {
+    background: white; padding: 40px; border-radius: 25px;
+    box-shadow: var(--sombra); border-left: 10px solid var(--marrom-escuro);
+}
+.preco-item { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 1.3rem; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
+
+/* --- GRID DE SABORES --- */
+.secao-sabores { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+.section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--marrom-escuro); margin-bottom: 50px; }
+
+.grid-sabores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background: white; padding: 25px; border-radius: 30px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: var(--sombra); transition: 0.5s;
+}
+
+.produto-card:hover { transform: translateY(-8px); }
+
+.produto-info { flex: 1; padding-right: 20px; }
+.produto-info h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--marrom-escuro); margin: 8px 0; }
+.produto-info p { font-size: 0.9rem; color: #777; margin: 0; }
+
+.badge {
+    background: #fff8eb; color: var(--dourado);
+    padding: 4px 10px; border-radius: 8px;
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+}
+
+.produto-foto-placeholder {
+    width: 130px; height: 110px; border-radius: 20px;
+    overflow: hidden; flex-shrink: 0; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.produto-foto-placeholder img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+
+/* --- FOOTER --- */
+.entrega-info { background: var(--marrom-escuro); color: white; text-align: center; padding: 80px 20px; }
+.btn-whats-footer { background: var(--verde-whats); color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 25px; }
+.rodape-final { text-align: center; padding: 50px; background: #f7f2ee; color: #8d6e63; font-size: 0.8rem; }
+
+/* --- MOBILE --- */
+@media (max-width: 480px) {
+    .produto-card { flex-direction: column-reverse; text-align: center; padding: 30px 20px; }
+    .produto-info { padding: 20px 0 0 0; }
+    .produto-foto-placeholder { width: 100%; height: 180px; }
+}
